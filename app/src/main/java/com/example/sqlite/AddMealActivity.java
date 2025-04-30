@@ -124,7 +124,11 @@ public class AddMealActivity extends AppCompatActivity {
             Intent si = new Intent(this, AddSupplierActivity.class);
             startActivity(si);
         } else if (id == R.id.p_order) {
-            // Future: go to AddOrderActivity
+            Intent si = new Intent(this, AddOrderActivity.class);
+            startActivity(si);        }
+        else if (id == R.id.p_viewTables) {
+            Intent si = new Intent(this, ViewTablesActivity.class);
+            startActivity(si);
         }
         return true;
     }

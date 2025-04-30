@@ -40,7 +40,7 @@ public class AddSupplierActivity extends AppCompatActivity {
 
         weddings();
         hlp = new HelperDB(this);
-        
+
     }
 
     /**
@@ -121,7 +121,11 @@ public class AddSupplierActivity extends AppCompatActivity {
             Intent si = new Intent(this, AddMealActivity.class);
             startActivity(si);
         }else if (id == R.id.p_order) {
-
+            Intent si = new Intent(this, AddOrderActivity.class);
+            startActivity(si);
+        }else if (id == R.id.p_viewTables) {
+            Intent si = new Intent(this, ViewTablesActivity.class);
+            startActivity(si);
         }
 
         return true;

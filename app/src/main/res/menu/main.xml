@@ -12,5 +12,8 @@
     <item
         android:id="@+id/p_order"
         android:title="Add Order" />
+    <item
+        android:id="@+id/p_viewTables"
+        android:title="ViewTables" />
 
 </menu>

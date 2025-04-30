@@ -174,7 +174,8 @@ public class SignUpEmployeeActivity extends AppCompatActivity {
             Intent si = new Intent(this, AddSupplierActivity.class);
             startActivity(si);
         } else if (id == R.id.p_meal) {
-
+            Intent si = new Intent(this, AddMealActivity.class);
+            startActivity(si);
         }else if (id == R.id.p_order) {
 
         }

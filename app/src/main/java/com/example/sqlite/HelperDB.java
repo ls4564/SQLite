@@ -1,8 +1,10 @@
 package com.example.sqlite;
 
-import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.content.Context;
+import android.util.Log;
 
 import com.example.sqlite.models.Employee;
 import com.example.sqlite.models.FoodSupplier;
@@ -10,28 +12,32 @@ import com.example.sqlite.models.Meal;
 import com.example.sqlite.models.Order;
 
 /**
- * @author  Lior Shem Tov
- * @version 1.1
- * @since   30/04/2025
- * Manage the app database: creation and upgrade of tables for employees, food suppliers, meals and orders.
+ * HelperDB manages the creation and upgrading of the SQLite database.
  */
 public class HelperDB extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "GYNbus.db";
     private static final int DATABASE_VERSION = 1;
-    String strCreate, strDelete;
+    String strCreate;
 
-    /**
-     * Constructor for the database helper
-     * @param context the context from the activity
-     */
     public HelperDB(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     /**
-     * Creates the application's database tables: Employees, FoodSuppliers, Meals, Orders.
-     * @param db the database instance on first creation
+     * Enables foreign key constraints for ON DELETE CASCADE to work properly.
+     * @param db the database instance
+     */
+    @Override
+    public void onConfigure(SQLiteDatabase db) {
+        super.onConfigure(db);
+        db.setForeignKeyConstraintsEnabled(true);
+    }
+
+    /**
+     * Called when the database is created for the first time.
+     * Creates all necessary tables and their relationships.
+     * @param db the database
      */
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -63,7 +69,7 @@ public class HelperDB extends SQLiteOpenHelper {
                 + Meal.DRINK + " TEXT);";
         db.execSQL(strCreate);
 
-        // Orders table
+        // Orders table with ON DELETE CASCADE for Employee
         strCreate = "CREATE TABLE " + Order.TABLE_ORDERS + " ("
                 + Order.ORDER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + Order.DATE + " TEXT, "
@@ -71,18 +77,13 @@ public class HelperDB extends SQLiteOpenHelper {
                 + Order.EMPLOYEE_ID + " TEXT, "
                 + Order.MEAL_ID + " INTEGER, "
                 + Order.SUPPLIER_ID + " TEXT, "
-                + "FOREIGN KEY(" + Order.EMPLOYEE_ID + ") REFERENCES " + Employee.TABLE_EMPLOYEES + "(" + Employee.KEY_CARD + "), "
+                + "FOREIGN KEY(" + Order.EMPLOYEE_ID + ") REFERENCES " + Employee.TABLE_EMPLOYEES + "(" + Employee.KEY_CARD + ") ON DELETE CASCADE, "
                 + "FOREIGN KEY(" + Order.MEAL_ID + ") REFERENCES " + Meal.TABLE_MEALS + "(" + Meal.MEAL_ID + "), "
                 + "FOREIGN KEY(" + Order.SUPPLIER_ID + ") REFERENCES " + FoodSupplier.TABLE_SUPPLIERS + "(" + FoodSupplier.COMPANY_ID + "));";
         db.execSQL(strCreate);
+
     }
 
-    /**
-     * Upgrades the database by dropping and recreating all tables if version changes.
-     * @param db the database
-     * @param oldVer old version
-     * @param newVer new version
-     */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVer, int newVer) {
         db.execSQL("DROP TABLE IF EXISTS " + Order.TABLE_ORDERS);

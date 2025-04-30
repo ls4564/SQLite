@@ -8,12 +8,21 @@
         android:title="Add Food Supplier page" />
     <item
         android:id="@+id/p_meal"
-        android:title="Add Meal" />
+        android:title="Add Meal page" />
     <item
         android:id="@+id/p_order"
-        android:title="Add Order" />
+        android:title="Add Order page" />
     <item
         android:id="@+id/p_viewTables"
-        android:title="ViewTables" />
+        android:title="ViewTables page" />
+    <item
+        android:id="@+id/p_filterFileds"
+        android:title="Filter Fileds page" />
+    <item
+        android:id="@+id/p_deleteEmployee"
+        android:title="Delete Employee page" />
+    <item
+        android:id="@+id/p_credits"
+        android:title="Credits page" />
 
 </menu>

@@ -13,15 +13,6 @@
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".ViewAndFilterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ViewTablesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AddOrderActivity"
-            android:exported="false" />
-        <activity
             android:name=".AddMealActivity"
             android:exported="false" />
         <activity

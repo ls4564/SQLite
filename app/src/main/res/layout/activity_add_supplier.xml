@@ -14,12 +14,12 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/eDCardNumber"
+            android:id="@+id/etCompanyID"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="8dp"
-            android:hint="מספר כרטיס"
-            android:inputType="number" />
+            android:hint="מספר ספק"
+            android:inputType="text" />
     </LinearLayout>
 
     <LinearLayout
@@ -30,11 +30,12 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/eDLastName"
+            android:id="@+id/etCompanyName"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="8dp"
-            android:hint="שם משפחה" />
+            android:hint="שם החברה"
+            android:inputType="text" />
     </LinearLayout>
 
     <LinearLayout
@@ -45,60 +46,30 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/eDFirstName"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:hint="שם פרטי" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <Spinner
-            android:id="@+id/sPCompany"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:hint="חברה" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/eDIdNumber"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:hint="תעודת זהות"
-            android:inputType="number" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/eDPhoneNumber"
+            android:id="@+id/etPrimaryPhone"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="8dp"
             android:gravity="center|right"
-            android:hint="טלפון נייד"
+            android:hint="טלפון ראשי"
             android:inputType="phone" />
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etSecondaryPhone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:gravity="center|right"
+            android:hint="טלפון משני"
+            android:inputType="phone" />
     </LinearLayout>
 
     <LinearLayout
@@ -109,14 +80,23 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnSaveEmployee"
+            android:id="@+id/btnSaveSupplier"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center|center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="16dp"
-            android:gravity="center"
-            android:onClick="add_employee"
-            android:text="שמור עובד" />
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:minWidth="160dp"
+            android:minHeight="48dp"
+            android:backgroundTint="#2196F3"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:onClick="addSupplier"
+            android:text="שמור ספק" />
     </LinearLayout>
 
 </LinearLayout>

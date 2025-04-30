@@ -39,6 +39,10 @@ public class SignUpEmployeeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_employee);
+
+        // Set page title in the action bar
+        getSupportActionBar().setTitle("Sign Up Employee Page");
+
         weddings();
         hlp = new HelperDB(this);
         String[] companies = {"Intel", "IBM", "Google"};
@@ -166,6 +170,14 @@ public class SignUpEmployeeActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+        if(id == R.id.p_food_company) {
+            Intent si = new Intent(this, AddSupplierActivity.class);
+            startActivity(si);
+        } else if (id == R.id.p_meal) {
+
+        }else if (id == R.id.p_order) {
+
+        }
         return true;
     }
 }

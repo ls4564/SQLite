@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/Sign_Up"
+        android:id="@+id/p_Sign_Up"
         android:title="Sign Up Employee page" />
     <item
-        android:id="@+id/food_company"
-        android:title="Food Supplier" />
+        android:id="@+id/p_food_company"
+        android:title="Add Food Supplier page" />
+    <item
+        android:id="@+id/p_meal"
+        android:title="Add Meal" />
+    <item
+        android:id="@+id/p_order"
+        android:title="Add Order" />
 
 </menu>

@@ -40,7 +40,7 @@ public class AddSupplierActivity extends AppCompatActivity {
 
         weddings();
         hlp = new HelperDB(this);
-        
+
     }
 
     /**
@@ -107,14 +107,14 @@ public class AddSupplierActivity extends AppCompatActivity {
     }
 
     /**
-     * Handles top menu item selection.
+     * Handles top menu item selection and page navigation.
      * @param item the selected menu item
      * @return true if handled
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if(id == R.id.p_Sign_Up) {
+        if (id == R.id.p_Sign_Up) {
             Intent si = new Intent(this, SignUpEmployeeActivity.class);
             startActivity(si);
         } else if (id == R.id.p_meal) {
@@ -126,17 +126,8 @@ public class AddSupplierActivity extends AppCompatActivity {
         }else if (id == R.id.p_viewTables) {
             Intent si = new Intent(this, ViewTablesActivity.class);
             startActivity(si);
-        }else if (id == R.id.p_filterFileds) {
-            Intent si = new Intent(this, ViewAndFilterActivity.class);
-            startActivity(si);
-        }else if (id == R.id.p_deleteEmployee) {
-            Intent si = new Intent(this, DeleteEmployeeActivity.class);
-            startActivity(si);
-        }else if (id == R.id.p_credits) {
-            Intent si = new Intent(this, CreditsActivity.class);
-            startActivity(si);
         }
+
         return true;
     }
 }
-

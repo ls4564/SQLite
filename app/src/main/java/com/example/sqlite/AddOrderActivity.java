@@ -111,20 +111,36 @@ public class AddOrderActivity extends AppCompatActivity {
     }
 
     /**
+     * Handles top menu item selection.
      * @param item the selected menu item
      * @return true if handled
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+        if(id == R.id.p_food_company) {
+            Intent si = new Intent(this, AddSupplierActivity.class);
             startActivity(si);
         } else if (id == R.id.p_meal) {
             Intent si = new Intent(this, AddMealActivity.class);
             startActivity(si);
+        }else if (id == R.id.p_Sign_Up) {
+            Intent si = new Intent(this, SignUpEmployeeActivity.class);
             startActivity(si);
+        }else if (id == R.id.p_viewTables) {
             Intent si = new Intent(this, ViewTablesActivity.class);
+            startActivity(si);
+        }else if (id == R.id.p_filterFileds) {
+            Intent si = new Intent(this, ViewAndFilterActivity.class);
+            startActivity(si);
+        }else if (id == R.id.p_deleteEmployee) {
+            Intent si = new Intent(this, DeleteEmployeeActivity.class);
+            startActivity(si);
+        }else if (id == R.id.p_credits) {
+            Intent si = new Intent(this, CreditsActivity.class);
             startActivity(si);
         }
         return true;
     }
 }
+

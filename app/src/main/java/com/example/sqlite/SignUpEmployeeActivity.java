@@ -179,9 +179,17 @@ public class SignUpEmployeeActivity extends AppCompatActivity {
         }else if (id == R.id.p_order) {
             Intent si = new Intent(this, AddOrderActivity.class);
             startActivity(si);
-        }
-        else if (id == R.id.p_viewTables) {
+        }else if (id == R.id.p_viewTables) {
             Intent si = new Intent(this, ViewTablesActivity.class);
+            startActivity(si);
+        }else if (id == R.id.p_filterFileds) {
+            Intent si = new Intent(this, ViewAndFilterActivity.class);
+            startActivity(si);
+        }else if (id == R.id.p_deleteEmployee) {
+            Intent si = new Intent(this, DeleteEmployeeActivity.class);
+            startActivity(si);
+        }else if (id == R.id.p_credits) {
+            Intent si = new Intent(this, CreditsActivity.class);
             startActivity(si);
         }
         return true;
